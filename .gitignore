@@ -1,3 +1,7 @@
+/lib
+/.token
+/.cache/
+
 # Compiled Lua sources
 luac.out
 
