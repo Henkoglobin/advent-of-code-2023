@@ -5,8 +5,8 @@ local client = require("client")
 
 return {
     games = {},
-    init = function(self)
-        self.games = linq(client:getDayInput("2"):trim():split("\n"))
+    init = function(self, day)
+        self.games = linq(client:getDayInput(day):trim():split("\n"))
             :select(function(line)
                 local gameId, sampleDefs = line:match("Game ([%s%d]+): (.+)")
                 local samples = linq(sampleDefs:split("; ")):select(function(sampleDef)

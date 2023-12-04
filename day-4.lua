@@ -5,8 +5,8 @@ local client = require("client")
 
 return {
     cards = {},
-    init = function(self)
-        self.cards = linq(client:getDayInput(4):trim():split("\n"))
+    init = function(self, day)
+        self.cards = linq(client:getDayInput(day):trim():split("\n"))
             :select(function(line, i)
                 local cardId, winningDef, numbersDef = line:match("Card ([%s%d]+): ([^|]+)| (.+)")
 

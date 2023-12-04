@@ -1,6 +1,8 @@
 local httpRequest = require("http.request")
 local httpCookie = require("http.cookie")
 
+local year <const> = 2023
+
 return {
     setCache = function(self, day, puzzleInput)
         local f = io.open(".cache/" .. day, "w+")
@@ -35,7 +37,7 @@ return {
             return cachedInput
         end
 
-        local uri = ("https://adventofcode.com/2023/day/%d/input"):format(day)
+        local uri = ("https://adventofcode.com/%d/day/%d/input"):format(year, day)
         local request = httpRequest.new_from_uri(uri)
 
         request.cookie_store:store(

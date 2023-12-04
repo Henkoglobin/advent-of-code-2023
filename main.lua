@@ -22,7 +22,7 @@ local function main(day)
         return
     end
 
-    local ok, err = pcall(puzzles.init, puzzles)
+    local ok, err = pcall(puzzles.init, puzzles, day)
     if not ok then
         print(("Initialization of day %s failed: %s"):format(day, err))
         return
