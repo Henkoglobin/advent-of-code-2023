@@ -2,6 +2,9 @@
 -- http here before ever requiring lua-string
 local client = require("client")
 
+-- Some convenience for the puzzles
+table.__index = table
+
 local function main(day)
     if day and not day:match("^%d+$") then
         print("Parameter 1 must be a number, if it's present.")
